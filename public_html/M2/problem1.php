@@ -1,20 +1,22 @@
 <?php
-$a1 = [10.001, 11.591, 0.011, 5.991, 16.121, 0.131, 100.981, 1.001];
-$a2 = [1.99, 1.99, 0.99, 1.99, 0.99, 1.99, 0.99, 0.99];
-$a3 = [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01];
-$a4 = [10.01, -12.22, 0.23, 19.20, -5.13, 3.12];
-function getTotal($arr) {
+$a1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+$a2 = [0, 1, 3, 5, 7, 9, 2, 4, 6, 8, 10];
+$a3 = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0];
+$a4 = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10];
+function processArray($arr) {
     echo "<br>Processing Array:<br><pre>" . var_export($arr, true) . "</pre>";
-    $total = 0.00;
-    //TODO do adding here
+    echo "<br>Odds output:<br>";
+    //note: use the $arr variable to iterate over, don't directly touch $a1-$a4
+    //TODO add logic here to echo out only odd values
     foreach($arr as $element){
-    	$total+=$element;
+    	if($element % 2 != 0){
+        	echo" $element ";
+        }
+    
     }
-    //TODO do rounding stuff here
-    $total = round($total, 2);
-    echo "The total is " . var_export($total, true);
+
 }
-echo "Problem 2: Adding Floats<br>";
+echo "Problem 1: Odd Output<br>";
 ?>
 <table>
     <thread>
@@ -26,16 +28,16 @@ echo "Problem 2: Adding Floats<br>";
     <tbody>
         <tr>
             <td>
-                <?php getTotal($a1) ?>
+                <?php processArray($a1); ?>
             </td>
             <td>
-                <?php getTotal($a2) ?>
+                <?php processArray($a2); ?>
             </td>
             <td>
-                <?php getTotal($a3) ?>
+                <?php processArray($a3); ?>
             </td>
             <td>
-                <?php getTotal($a4); ?>
+                <?php processArray($a4); ?>
             </td>
         </tr>
 </table>
