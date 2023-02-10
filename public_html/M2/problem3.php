@@ -9,6 +9,7 @@ function bePositive($arr) {
     echo "<br>Positive output:<br>";
     //TODO use echo to output all of the values as positive (even if they were originally positive) 
     //hint: may want to use var_dump() to show final data types
+    // ucid : mab265 Date: 02/09/2023
     foreach($arr as $val){   // getting each element from the given array
     	if(is_string($val)){    // checking if element type is string
         	$val = (string)abs((int)$val);    // making all the elements positive while keeping it's original datatype attached as string
