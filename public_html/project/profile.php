@@ -123,11 +123,30 @@ $username = get_username();
     function validate(form) {
         let pw = form.newPassword.value;
         let con = form.confirmPassword.value;
+        let currpw = form.currentPassword.value;
+        let email = form.email.value;
+        let username = form.username.value;
         let isValid = true;
         //TODO add other client side validation....
 
         //example of using flash via javascript
         //find the flash container, create a new element, appendChild
+
+        let validEmailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        let validUsernameRegex = /^[a-zA-Z0-9_-]{3,16}$/;
+
+        if (!validEmailRegex.test(email)) {
+            flash("Invalid email address", "danger");
+            boolLogic = false;
+        }
+        if (!validUsernameRegex.test(username)) {
+            flash("Username must only contain 3-16 characters a-z, 0-9, _, or -", "danger");
+            boolLogic = false;
+        }
+        if ((currpw.length < 8) || (pw.length < 8 ) ){
+            flash("Password too short", "danger");
+            boolLogic = false;
+        } 
         if (pw !== con) {
             flash("Password and Confrim password must match", "warning");
             isValid = false;
