@@ -26,7 +26,32 @@ reset_session();
         //TODO 1: implement JavaScript validation
         //ensure it returns false for an error and true for success
 
-        return true;
+        let boolLogic = true;
+        let email = form.email.value;
+        let username = form.username.value;
+        let pwValue = form.password.value;
+        let pwValueConfirm = form.confirm.value;
+
+        let validEmailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        let validUsernameRegex = /^[a-zA-Z0-9_-]{3,16}$/;
+
+        if (!validEmailRegex.test(email)) {
+            flash("Invalid email address", "danger");
+            boolLogic = false;
+        }
+        if (!validUsernameRegex.test(username)) {
+            flash("Username must only contain 3-16 characters a-z, 0-9, _, or -", "danger");
+            boolLogic = false;
+        }
+        if (pwValue.length < 8) {
+            flash("Password too short", "danger");
+            boolLogic = false;
+        }  
+        if (pwValueConfirm !== pwValue) {
+            flash("Passwords must match", "danger");
+            boolLogic = false;
+        }
+        return boolLogic;
     }
 </script>
 <?php
