@@ -1,0 +1,82 @@
+.alert-success {
+    background-color: green
+}
+
+.alert-warning {
+    background-color: yellow;
+}
+
+.alert-danger {
+    background-color: red;
+}
+
+.alert-info {
+    background-color: teal;
+}
+
+nav {
+    background-color: #A9A9A9;
+    padding: 0.5px;
+    border: 1px solid;
+    margin-bottom: 20px;
+  }
+  
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+nav li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+nav li:last-child {
+    margin-right: 0;
+  }
+  
+nav a {
+    display: block;
+    padding: 10px;
+    color: #000;
+    text-decoration: none;
+  }
+  
+body{
+    background-color: #67B7D1; 
+
+}
+
+input, select {
+    display: block;
+    width: 25%;
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    border: 1px solid;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  thead th {
+    background-color: #A9A9A9;
+    color: #000;
+    text-align: left;
+    padding: 5px;
+    border: 1px solid;
+  }
+  
+  td {
+    border: 1px solid;
+    padding: 10px;
+  }
+  
+  
+  
+  
+
