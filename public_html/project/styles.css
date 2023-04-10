@@ -58,5 +58,26 @@ input, select {
   }
   
 
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  thead th {
+    background-color: #A9A9A9;
+    color: #000;
+    text-align: left;
+    padding: 5px;
+    border: 1px solid;
+  }
+  
+  td {
+    border: 1px solid;
+    padding: 10px;
+  }
+  
+  
+  
   
 
