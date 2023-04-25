@@ -73,7 +73,18 @@ input, select {
     padding: 10px;
   }
   
-  
-  
+  .card-text{
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3; 
+      -webkit-box-orient: vertical;
+      white-space: normal; 
+      text-overflow: ellipsis;
+  }
+
+ button{
+  width: 100%;
+ }
+
   
 
