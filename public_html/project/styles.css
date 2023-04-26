@@ -14,11 +14,8 @@
     background-color: teal;
 }
 
-nav {
+.navbar {
     background-color: #A9A9A9;
-    padding: 0.5px;
-    border: 1px solid;
-    margin-bottom: 20px;
   }
   
 nav ul {
@@ -76,7 +73,18 @@ input, select {
     padding: 10px;
   }
   
-  
-  
+  .card-text{
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3; 
+      -webkit-box-orient: vertical;
+      white-space: normal; 
+      text-overflow: ellipsis;
+  }
+
+ button{
+  width: 100%;
+ }
+
   
 
