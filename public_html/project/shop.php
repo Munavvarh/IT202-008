@@ -1,6 +1,5 @@
 <?php
 require(__DIR__ . "/../../partials/nav.php");
-
 $results = [];
 $db = getDB();
 $stmt = $db->prepare("SELECT id, name, description, category, stock, unit_price FROM Products WHERE stock > 0 LIMIT 10");
@@ -14,9 +13,46 @@ try {
     error_log(var_export($e, true));
     flash("Error fetching items", "danger");
 }
+// ucid mab265 and date:04/25/2023
+if (isset($_POST["itemName"]) || isset($_POST["itemCategory"])) {
+    $db = getDB();
+    $name = isset($_POST["itemName"]) ? $_POST["itemName"] : "";
+    $category = isset($_POST["itemCategory"]) ? $_POST["itemCategory"] : "";
+    $orderBy = "";
+    if (isset($_POST["sortByPrice"])) {
+        if ($_POST["sortByPrice"] === "asc") {
+            $orderBy = "ORDER BY unit_price ASC";
+        } elseif ($_POST["sortByPrice"] === "desc") {
+            $orderBy = "ORDER BY unit_price DESC";
+        }
+    }
+    $stmt = $db->prepare("SELECT id, name, description, category, stock, unit_price, visibility FROM Products WHERE name LIKE :name AND (category = :category OR :category = '') $orderBy LIMIT 10");
+    try {
+        $stmt->execute([":name" => "%" . $name . "%", ":category" => $category]);
+        $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if ($r) {
+            $results = $r;
+        }
+    } catch (PDOException $e) {
+        error_log(var_export($e, true));
+        flash("Error fetching records", "danger");
+    }
+}
 ?>
 <div class="container-fluid">
     <h1>Shop</h1>
+    <form method="POST" class="row row-cols-lg-auto g-3 align-items-center">
+        <div class="input-group mb-3">
+            <input class="form-control" type="search" name="itemName" placeholder="Item Filter" value="<?php se($_POST, 'itemName'); ?>" />
+            <input class="form-control" type="search" name="itemCategory" placeholder="Category Filter" value="<?php se($_POST, 'itemCategory'); ?>" />
+            <select class="form-select" name="sortByPrice">
+                <option value="">Sort by Price</option>
+                <option value="asc" <?php if (isset($_POST['sortByPrice']) && $_POST['sortByPrice'] === 'asc') echo 'selected'; ?>>Low to High</option>
+                <option value="desc" <?php if (isset($_POST['sortByPrice']) && $_POST['sortByPrice'] === 'desc') echo 'selected'; ?>>High to Low</option>
+            </select>
+            <input class="btn btn-primary" type="submit" value="Search" />
+        </div>
+    </form>
     <div class="row row-cols-sm-2 row-cols-xs-1 row-cols-md-3 row-cols-lg-5 g-4">
         <?php
         foreach ($results as $item) : ?>
