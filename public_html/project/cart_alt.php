@@ -159,6 +159,7 @@ try {
                             <input type="hidden" name="action" value="clear" />
                             <input type="submit" class="btn btn-danger btn-block" style="width: 10%; font-size: 14px;" value="Clear Cart" />
                         </form>
+                        <a href="<?php echo $BASE_PATH; ?>/purchase.php?id=<?php se($c, "product_id"); ?>" class="btn btn-primary me-2" style="width: 10%; font-size: 14px;">Purchase</a>
                 </td>
             </tr>
         </tbody>
