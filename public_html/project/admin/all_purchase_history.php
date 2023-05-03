@@ -16,7 +16,7 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <div class="container-fluid">
-    <h1>Purchase History</h1>
+    <h1>All Users Purchased History</h1>
     <br>
     <?php if (count($orders) == 0) : 
         flash("No purchase history found");
