@@ -38,16 +38,22 @@ session_start();
         <div class="collapse navbar-collapse" id="navContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <?php if (is_logged_in()) : ?>
+                <ul>
                     <li class="nav-item"><a class="nav-link" href="<?php echo get_url('profile.php'); ?>">Profile</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo get_url('shop.php'); ?>">Shop</a></li>
-
+                    <li class="nav-item"><a class="nav-link" href="<?php echo get_url('cart_alt.php'); ?>">Cart</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo get_url('purchase_history.php'); ?>">Orders</a></li>
+                </ul>
                 <?php endif; ?>
                 <?php if (!is_logged_in()) : ?>
+                <ul>
                     <li class="nav-item"><a class="nav-link" href="<?php echo get_url('login.php'); ?>">Login</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo get_url('register.php'); ?>">Register</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo get_url('shop.php'); ?>">Shop</a></li>
+                </ul>
                 <?php endif; ?>
                 <?php if (has_role("Admin")) : ?>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo get_url('admin/all_purchase_history.php'); ?>">All Orders</a></li>
                     <li class="nav-item dropdown ">
                         <a class="nav-link dropdown-toggle " href="#" id="rolesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Admin Roles
