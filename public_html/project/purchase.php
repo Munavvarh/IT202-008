@@ -161,17 +161,14 @@ try {
                 ?>
                 <tr>
                     <td> <?php se($c, "name"); ?></td>
-                    <td><?php se($result, "unit_price"); ?></td>
+                    <td>$<?php se($result, "unit_price"); ?></td>
                     <td><?php se($c, "desired_quantity"); ?></td>
                     <?php 
                         $total += (int)se($subtotalVal, "subtotal", 0, false);
-                        $string = $c["name"];
-                        $count = strlen($string) / strlen($string); 
-                        $count = (int) $count; 
-                        $Itemtotal += (int)se($count, "item", 0, false);
+                        $Itemtotal = count($cart);
                      ?>
                     <td>
-                        <?php se($subtotalVal, "subtotal"); ?>
+                        $<?php se($subtotalVal, "subtotal"); ?>
                         <?php if ($cart_unit_price != $product_unit_price) : ?>
                             <br>
                             <small>
@@ -193,7 +190,7 @@ try {
                 <td colspan="100%">Item Total: <?php se($Itemtotal, null, 0); ?></td>
             </tr>
             <tr>
-                <td colspan="100%">Total: <?php se($total, null, 0); ?></td>
+                <td colspan="100%">Total: $<?php se($total, null, 0); ?></td>
             </tr>
             <tr>
                 <td colspan="100%"><a href="<?php echo $BASE_PATH; ?>/cart_alt.php?id=<?php se($c, "product_id"); ?>">Back to Cart </a></td>
