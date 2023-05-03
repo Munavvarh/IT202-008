@@ -5,7 +5,7 @@ is_logged_in(true);
 
 $TABLE_NAME = "Orders";
 $db = getDB();
-
+// ucid = mab265 , date 05/03/2023
 if (isset($_POST["submit"])) {
         $payment_method = $_POST["payment_method"];
         if (empty($payment_method)) {
