@@ -1,4 +1,5 @@
 # Project Name: Simple Shop
+## Project Demo : [https://www.youtube.com/watch?v=QgvNycVGsg8](https://www.youtube.com/watch?v=QgvNycVGsg8) 
 ## Project Summary: This project will create a simple e-commerce site for users. Administrators or store owners will be able to manage inventory and users will be able to manage their cart and place orders.
 ## Github Link: [https://github.com/Munavvarh/IT202-008/tree/prod/public_html/project](https://github.com/Munavvarh/IT202-008/tree/prod/public_html/project)
 ## Project Board Link: [https://github.com/users/Munavvarh/projects/3](https://github.com/users/Munavvarh/projects/3)
