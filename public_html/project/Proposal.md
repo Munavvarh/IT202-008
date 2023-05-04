@@ -1,8 +1,8 @@
 # Project Name: Simple Shop
 ## Project Summary: This project will create a simple e-commerce site for users. Administrators or store owners will be able to manage inventory and users will be able to manage their cart and place orders.
 ## Github Link: [https://github.com/Munavvarh/IT202-008/tree/prod/public_html/project](https://github.com/Munavvarh/IT202-008/tree/prod/public_html/project)
-## Project Board Link: 
-## Website Link: https://mab265-prod.herokuapp.com/project
+## Project Board Link: [https://github.com/users/Munavvarh/projects/3](https://github.com/users/Munavvarh/projects/3)
+## Website Link: [https://mab265-prod.herokuapp.com/project/login.php](https://mab265-prod.herokuapp.com/project/login.php)
 ## Your Name: Munavvarhusain Bunglawala
 
  
@@ -10,12 +10,10 @@
 ### Proposal Checklist and Evidence
 
 - Milestone 1
-  - (add link to milestone1.md from milestone1 branch)  
+  - (https://github.com/Munavvarh/IT202-008/blob/Milestone1/public_html/milestone1.md)  
 - Milestone 2
-  - (add link to milestone2.md from milestone2 branch)
+  - (https://github.com/Munavvarh/IT202-008/blob/Milestone2/public_html/milestone2.md)
 - Milestone 3
-  - (add link to milestone3.md from milestone3 branch)
-- Milestone 4
-  - (add link to milestone4.md from milestone4 branch)
+  - (https://github.com/Munavvarh/IT202-008/blob/Milestone_3/public_html/milestone3.md)
 - Demo Link
-  - (add youtube link to unlisted or public demo) Note you'll need to verify your youtube account to upload videos > 15mins
+  - (https://www.youtube.com/watch?v=QgvNycVGsg8) 
